@@ -1,0 +1,31 @@
+# Core Deep Learning
+torch
+torchvision
+
+# Diffusion Models (Hugging Face, lightweight & easy)
+diffusers
+
+# Data manipulation & utils
+numpy
+pandas
+scikit-learn
+scipy
+
+# Plotting & visualization
+matplotlib
+seaborn
+
+# Jupyter notebook support
+jupyter
+notebook
+ipywidgets
+tqdm
+
+# Image processing
+Pillow
+
+# GAN/diffusion metrics
+torchmetrics
+
+# Optional: For FID/Inception Score (sometimes needs TensorFlow)
+tensorflow
