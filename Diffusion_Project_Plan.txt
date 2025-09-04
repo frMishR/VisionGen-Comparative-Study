@@ -1,0 +1,73 @@
+# Diffusion Project Plan (Oxford102 & CUB200)
+
+## 🎯 Objective
+Implement and train **Conditional Diffusion Models** on multi-class datasets (**Oxford-102 Flowers** and **CUB-200 Birds**) for **class-guided image generation**. Focus is on step-by-step notebook execution, clear code/markup alternation, and structured results for GitHub presentation.
+
+---
+
+## 📂 Folder Structure
+DiffusionGen/
+├── notebooks/
+│   ├── Diffusion_Oxford102.ipynb   # Diffusion training & results on Oxford102
+│   ├── Diffusion_CUB200.ipynb      # Diffusion training & results on CUB200
+│   └── utils_diffusion.ipynb       # Shared modules (denoising, scheduler, etc.)
+├── data/
+│   ├── oxford102/                  # Oxford flowers dataset
+│   └── cub200/                     # CUB birds dataset
+├── models/
+│   ├── oxford_diffusion/           # Saved checkpoints (Oxford102)
+│   └── cub_diffusion/              # Saved checkpoints (CUB200)
+├── results/
+│   ├── oxford102_samples/          # Generated flower images
+│   └── cub200_samples/             # Generated bird images
+├── logs/                           # Training logs, loss curves
+├── videos/                         # MP4 demos of diffusion process
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+---
+
+## ⏱️ Work Breakdown (Notebook Flow)
+
+### Step 0 – Setup (2 hrs)
+- Import libraries (PyTorch, torchvision, tqdm, matplotlib).
+- Define diffusion utilities: forward noising, reverse denoising, scheduler.
+- Set dataset paths + transforms (resize, normalize).
+
+### Step 1 – Data Preparation (3 hrs)
+- Load **Oxford-102 Flowers** first.
+- Split into train/test sets.
+- Visualize sample images with labels.
+- Repeat for **CUB-200 Birds**.
+
+### Step 2 – Diffusion Model (4 hrs)
+- Define **U-Net backbone**.
+- Add conditional embedding for class labels.
+- Implement forward + reverse diffusion steps.
+- Logging with loss functions (MSE on noise).
+
+### Step 3 – Training (8–10 hrs GPU time)
+- Train on Oxford-102 first (200+ epochs).
+- Plot loss curves.
+- Generate intermediate denoising steps (at different timesteps).
+- Save checkpoints.
+
+### Step 4 – Results & Sampling (3 hrs)
+- Generate **100+ samples** conditioned on labels.
+- Compare flowers vs. birds (qualitative results).
+- Save MP4 demo of denoising process (from pure noise → image).
+
+### Step 5 – Extension & GitHub Prep (2 hrs)
+- Add **FID & Inception Score evaluation**.
+- Document utilities in `README.md`.
+- Upload notebooks, models, results, videos to repo.
+
+---
+
+## 📌 Deliverables
+- `Diffusion_Oxford102.ipynb` and `Diffusion_CUB200.ipynb` notebooks.
+- Training logs + loss curves.
+- Generated flower & bird images.
+- MP4 demo of denoising.
+- README with explanation + requirements.txt.
